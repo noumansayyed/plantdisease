@@ -1,12 +1,12 @@
-#########
+# Plant Database Setup
 
-1. Use the following command to obtain your IP address in windows powershell and then place that IP in the plantDatabase settings:
+1. Use the following command to obtain your IP address in Windows PowerShell and then place that IP in the `plantDatabase` settings:
 
-(Get-NetIPAddress -AddressFamily IPv4 -InterfaceAlias "Wi-Fi").IPAddress
+   ```powershell
+   (Get-NetIPAddress -AddressFamily IPv4 -InterfaceAlias "Wi-Fi").IPAddress
 
-##########
 
-2.In the plantDatabase settings, set the ALLOWED_HOSTS:
+2. In the plantDatabase settings, set the ALLOWED_HOSTS:
 
 ALLOWED_HOSTS = ['192.168.48.26']
 
@@ -14,72 +14,53 @@ ALLOWED_HOSTS = ['192.168.48.26']
 
 .baseUrl("http://192.168.48.26:8000") // with port
 
+4. res -> xml -> security network config -> change IP.
 
-4. Specify the models' paths in the plantapp views:  // django
+To Run the Django App
 
-if it correct dont do any thing
+Navigate to the Plantdatabase directory and use the following commands in the terminal:
 
-MODELS = {
-    "potato": {
-        "model": "model_Potato/1",  # change over here in views
-        "class_names": ["Potato Early blight", "Potato Late blight", "Potato Healthy"]
-    },
-    "tomato": {
-        "model": "model_tomato/1",
-        "class_names": ['Tomato_Bacterial_spot', 'Tomato_Early_blight', 'Tomato_Late_blight','Tomato_Leaf_Mold', 'Tomato__Tomato_mosaic_virus', 'Tomato_healthy']
-    },
-}
+1. Create virtual environment  // if created ignore 
+python -m venv env
 
+2. Activate the virtual environment:
+env/Scripts/Activate
 
+3. If any changes are made, run this command; otherwise, skip:
+python manage.py makemigrations
 
+4. After running the previous command, run this:
+python manage.py migrate
 
-To run the Django app, navigate to the Plantdatabase directory and use the following commands in the terminal:
-
-
-
-1. env/Scripts/Activate // to start the virtual environment
+5. To start the app:
+    python manage.py runserver 192.168.48.26:8000 // place your IP address
 
 
-libraries: to install
+Android Studio Version Compatibility
 
-a.pip install django
-b. pip install tensorflow
-c. pip install numpy
-d. python -m pip install Pillow
-e. pip install matplotlib
-f. pip install  djangorestframework
-
-this all are required install only once 
+To change in android studio go setting project structure -> project  
 
 
-2. If any changes are made, run this command; otherwise, skip: python manage.py makemigrations
-3. After running the previous command, run this: python manage.py migrate
+Based on:
 
-######
-
-4. To start the app: python manage.py runserver 192.168.48.26:8000 // place your IP address
-
-######
-
-Enable Developer Options on your Android device:
-
-Open the "Settings" app on your Android device.
-Scroll down and select "About phone" or "About device."
-Find the "Build number" entry and tap it seven times to enable Developer Options. You may need to enter your device's unlock code or PIN.
+Android Studio Version	    Required AGP Version
+Iguana	                            2023.2.1
+Hedgehog	                        2023.1.1
+Giraffe	                            2022.3.1
+Flamingo	                        2022.2.1
+Electric Eel	                    2022.1.1
 
 
-Once Developer Options is activated, go back to the main "Settings" screen.
-Scroll down and select "Developer options."
-Toggle the switch for "USB debugging" to enable it.
-Connect your Android device to your computer:
+Plugin Version Compatibility:
 
-Use a USB cable to connect your Android device to your computer.
+Plugin Version	            Minimum Required Gradle Version
+8.4 (alpha)	                        8.6-rc-1
+8.3 (beta)	                        8.4
+8.2	                                8.2
+8.1	                                8.0
+8.0	                                8.0
+7.4	                                7.5
 
-Run your Android application on the device:
+Access Disease Content
 
-Open your integrated development environment (IDE) like Android Studio.
-Build and run your application, selecting your connected Android device as the deployment target.
-
-#####
-
-Access disease content from "https://ausveg.com.au/biosecurity-agrichemical/crop-protection/overview-pests-diseases-disorders/".
+Access disease content from https://ausveg.com.au/biosecurity-agrichemical/crop-protection/overview-pests-diseases-disorders/.
