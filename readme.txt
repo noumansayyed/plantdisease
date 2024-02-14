@@ -21,10 +21,26 @@ To Run the Django App
 Navigate to the Plantdatabase directory and use the following commands in the terminal:
 
 1. Create virtual environment  // if created ignore 
-python -m venv env
+python -m venv venv
 
 2. Activate the virtual environment:
-env/Scripts/Activate
+venv/Scripts/Activate
+
+libraries: to install
+
+a.pip install django
+python -m django --version
+4.2.9
+
+b. pip install tensorflow
+pip show tensorflow
+Version: 2.15.0
+pip uninstall tensorflow
+
+c. pip install numpy
+d. python -m pip install Pillow
+e. pip install matplotlib
+f. pip install  djangorestframework
 
 3. If any changes are made, run this command; otherwise, skip:
 python manage.py makemigrations
