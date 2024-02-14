@@ -1,3 +1,26 @@
+1.Clone the Repository:
+
+git clone https://github.com/noumansayyed/plantdisease
+
+2.Navigate to the Project Directory:
+
+cd plantdisease
+
+3.Create a Virtual Environment:
+python -m venv venv
+
+4.Activate the Virtual Environment:
+venv\Scripts\activate
+
+5.Install Dependencies:
+pip install -r requirements.txt
+
+
+If required 
+
+6.deactivate the virtual environment
+Deactivate
+
 # Plant Database Setup
 
 1. Use the following command to obtain your IP address in Windows PowerShell and then place that IP in the `plantDatabase` settings:
